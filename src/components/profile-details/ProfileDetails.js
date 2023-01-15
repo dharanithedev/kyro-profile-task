@@ -29,6 +29,7 @@ function ProfileDetails() {
         <span className='change-profile-image'><CameraAltIcon/></span>
         <p className='bold display-name'>{userInfo[0].displayName}</p>
         <p className='display-email'>{userInfo[0].email}</p>
+        <p className='display-email'>{userInfo[0].phoneNumberPersonal}</p>
       </div>
     </div>
   )
