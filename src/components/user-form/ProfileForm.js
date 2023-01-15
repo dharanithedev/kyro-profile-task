@@ -1,27 +1,26 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { FormGroup } from '@mui/material';
 import { Button } from '@mui/material';
 import Input from './inputField/Input';
-import { inputFields } from '../../data/inputFields';
+import { inputFields, initialState } from '../../data/inputFields';
+
+import { userInfoContext } from '../container/Container';
 
 
 import './profile-form.css'
 
 const ProfileForm = () => {
 
-  const [values, setValues] = useState({
-    firstName : '',
-    lastName : '',
-    displayName : '',
-    email : '',
-    phoneNumberPersonal : '',
-    phoneNumberWork : '',
-    location : ''
-  });
+  // Initial State
+  const [values, setValues] = useState(initialState);
+
+  // User Context
+  const [userInfo, setUserInfo] = useContext(userInfoContext);
 
   const setChanges = (event) => {
     const {name, value} = event.target;
     setValues({ ...values, [name]: value});
+    setUserInfo({...userInfo, [name]: value})
   }
 
   const handleSubmit = (e) =>{
@@ -36,7 +35,7 @@ const ProfileForm = () => {
 
   return (
     <div className='profile-from-section'>
-      <p className='form-header bold'>My Profile {values['firstName']}</p>
+      <p className='form-header bold'>My Profile</p>
       <FormGroup>
       <div className='profile-form alignFormFields'>
         <div className='formInputs'>

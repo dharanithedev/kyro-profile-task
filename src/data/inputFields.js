@@ -55,3 +55,13 @@ export const inputFields = [
       placeholderIcon:<LocationOnIcon/>
     }
   ];
+
+  export const initialState = {
+    firstName : '',
+    lastName : '',
+    displayName : '',
+    email : '',
+    phoneNumberPersonal : '',
+    phoneNumberWork : '',
+    location : ''
+  }
