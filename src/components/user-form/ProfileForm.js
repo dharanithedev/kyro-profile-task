@@ -25,7 +25,7 @@ const ProfileForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form', userInfo)
-    axios.put(`http://localhost:8082/api/user/${userInfo['_id']}`, values)
+    axios.put(`https://kyro-backend.onrender.com/api/user/${userInfo['_id']}`, values)
       .then((res) => {
         setValues(initialState);
       })

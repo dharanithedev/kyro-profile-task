@@ -19,7 +19,7 @@ function Container() {
 
   const fetchUserDetails = () => {
     axios
-      .get(`http://localhost:8082/api/user`)
+      .get(`https://kyro-backend.onrender.com/api/user`)
       .then((res) => {
         setUserInfo(res.data[0]);
       })
