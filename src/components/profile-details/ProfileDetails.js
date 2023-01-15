@@ -7,13 +7,8 @@ import './profile-details.css'
 import { userInfoContext } from '../container/Container';
 
 function ProfileDetails() {
-
   const userInfo = useContext(userInfoContext);
-
-  useEffect(()=>{
-    console.log(userInfo);
-  },[]);
-
+  
   return (
     <div className='child-components profile-details'>
       <div className='profile-details-header'>

@@ -5,11 +5,6 @@ import { userInfoContext } from '../container/Container';
 
 function Body() {
   const userInfo = useContext(userInfoContext);
-
-  useEffect(()=>{
-    console.log(userInfo);
-  },[]);
-  
   return (
     <div className='child-components app-body'>
       <div className='body-header'>
