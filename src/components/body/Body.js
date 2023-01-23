@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
 import './body.css'
 import ProfileForm from '../user-form/ProfileForm';
 import { userInfoContext } from '../container/Container';
