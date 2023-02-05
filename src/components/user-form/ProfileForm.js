@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 
 import axios from 'axios';
 import Input from './inputField/Input';
@@ -19,10 +19,13 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
+
+
 const ProfileForm = () => {
 
-  const [values, setValues] = useState(initialState);
   const [userInfo, setUserInfo, fetchUserDetails] = useContext(userInfoContext);
+  
+  const [values, setValues] = useState(initialState);
   const [open, setOpen] = useState(false);
   const [severity, setSeverity] = useState('success');
 
@@ -31,12 +34,17 @@ const ProfileForm = () => {
     setValues({ ...values, [name]: value });
     setUserInfo({ ...userInfo, [name]: value })
   }
+
+  useEffect(()=>{
+    console.log(userInfo);
+    setValues(userInfo);
+  },[]) 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!Object.values(values).includes("")) {
       axios.put(`https://kyro-backend.onrender.com/api/user/${userInfo['_id']}`, values)
         .then((res) => {
-          setValues(initialState);
           openAlert('success');
         })
         .catch((err) => {
@@ -47,10 +55,13 @@ const ProfileForm = () => {
     }
 
   }
+
   const openAlert = (severity) => {
     setSeverity(severity);
     setOpen(true);
   };
+
+
   const closeAlert = (event, reason) => {
     if (reason === 'clickaway') {
       return;
