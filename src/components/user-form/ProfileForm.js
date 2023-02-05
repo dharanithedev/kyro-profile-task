@@ -25,7 +25,7 @@ const ProfileForm = () => {
 
   const [userInfo, setUserInfo, fetchUserDetails] = useContext(userInfoContext);
   
-  const [values, setValues] = useState(initialState);
+  const [values, setValues] = useState(initialState)
   const [open, setOpen] = useState(false);
   const [severity, setSeverity] = useState('success');
 
