@@ -76,7 +76,7 @@ const ProfileForm = () => {
 
   return (
     <div className='profile-from-section'>
-      <p className='form-header bold'>My Profile</p>
+      <p className='form-header bold'>My Profile - Dinesh</p>
       <FormGroup>
         <div className='profile-form alignFormFields'>
           <div className='formInputs'>
