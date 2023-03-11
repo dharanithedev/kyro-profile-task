@@ -31,7 +31,7 @@ function sidenav() {
       <div className='navigation-section'>
         <div className='navigation-list'>
           <SettingsIcon/>
-          <span>Logout</span>
+          <span>Logouttt</span>
         </div>
       </div>
     </div>
