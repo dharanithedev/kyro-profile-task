@@ -8,7 +8,7 @@ function Body() {
   return (
     <div className='child-components app-body'>
       <div className='body-header'>
-        <p className='user-name bold'>Good Morning, {userInfo[0].firstName}</p>
+        <p className='user-name bold'>Good Morninfgdfgdfg, {userInfo[0].firstName}</p>
         <p className='current-date'>April 28, 2022</p>
       </div>
       <ProfileForm/>
